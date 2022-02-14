@@ -1,8 +1,8 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-class Cart extends React.Component {
-    constructor() {
+const Cart = (props) => {
+    /*constructor() {
         super();
         this.state ={
             products: [
@@ -62,30 +62,28 @@ class Cart extends React.Component {
         this.setState({
             products : items
         })
-    }
-
-    render() {
-        const {products} = this.state;
-        return(
-            <div className="cart">
-                {products.map((product) => {
-                    return (
-                        <CartItem 
-                            product={product}
-                            key={product.id}
-                            onIncreaseQuantity = {this.handleIncreaseQuantity}
-                            onDecreaseQuantity = {this.handleDecreaseQuantity}
-                            onDeleteProduct = {this.handleDeleteProduct}
-                            /* func={() =>console.log('sbsd')}
-                            isloggedin = {false}
-                            jsx={<h1>Test</h1>}
-                            comp={<CartItem/>}*/
-                        />
-                    )
-                })}
-            </div>
-        );
-    }
+    }*/
+    const {products} = props;
+    return(
+        <div className="cart">
+            {products.map((product) => {
+                return (
+                    <CartItem 
+                        product={product}
+                        key={product.id}
+                        onIncreaseQuantity = {props.onIncreaseQuantity}
+                        onDecreaseQuantity = {props.onDecreaseQuantity}
+                        onDeleteProduct = {props.onDeleteProduct}
+                        /* func={() =>console.log('sbsd')}
+                        isloggedin = {false}
+                        jsx={<h1>Test</h1>}
+                        comp={<CartItem/>}*/
+                    />
+                )
+            })}
+        </div>
+    );
+    
 }
 
 export default Cart;
