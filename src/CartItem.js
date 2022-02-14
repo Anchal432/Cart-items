@@ -1,7 +1,7 @@
 import React from 'react';
 
 class CartItem extends React.Component{
-    constructor () {
+    /*constructor () {
         super();
         this.state = {
             price: 999,
@@ -10,7 +10,22 @@ class CartItem extends React.Component{
             img: ''
         }
         //this.increaseQuantity = this.increaseQuantity.bind(this)
-    }
+        this.testing();
+    }*/
+    /*testing () {
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('done');
+            }, 5000);
+        })
+        promise.then(() => {
+            this.setState({ qty: this.state.qty + 10});
+            this.setState({ qty: this.state.qty + 10});
+            this.setState({ qty: this.state.qty + 10});
+            console.log('state', this.state);
+        });
+    }*/
+
     increaseQuantity = () => {
         //console.log('this', this.state);
         //setState form 1
@@ -27,6 +42,10 @@ class CartItem extends React.Component{
     }
 
     decreaseQuantity = () => {
+        const { qty } = this.state;
+        if(qty === 0){
+            return;
+        }
         this.setState((prevState) => {
             return{
                 qty: prevState.qty - 1
@@ -35,9 +54,11 @@ class CartItem extends React.Component{
     }
 
     render(){
-        const {price, title, qty} = this.state;
+        console.log('this.props', this.props);
+        const {price, title, qty} = this.props.product;
         return (
             <div className="cart-item">
+                {this.props.jsx}
                 <div className="left-block">
                     <img style={styles.image} />
                 </div>
