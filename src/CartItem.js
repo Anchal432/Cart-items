@@ -26,7 +26,7 @@ class CartItem extends React.Component{
         });
     }*/
 
-    increaseQuantity = () => {
+    /*increaseQuantity = () => {
         //console.log('this', this.state);
         //setState form 1
         // this.setState({
@@ -51,14 +51,20 @@ class CartItem extends React.Component{
                 qty: prevState.qty - 1
             }
         });
-    }
+    }*/
 
     render(){
         console.log('this.props', this.props);
         const {price, title, qty} = this.props.product;
+        const {
+            product,
+            onIncreaseQuantity, 
+            onDecreaseQuantity, 
+            onDeleteProduct
+        } = this.props;
         return (
             <div className="cart-item">
-                {this.props.jsx}
+                {/* {this.props.jsx} */}
                 <div className="left-block">
                     <img style={styles.image} />
                 </div>
@@ -72,18 +78,20 @@ class CartItem extends React.Component{
                             alt="increase" 
                             className="actions-icons" 
                             src="https://cdn-icons.flaticon.com/png/128/3303/premium/3303893.png?token=exp=1644749279~hmac=df3724a1fa36004f9d242aab2396c6b0" 
-                            onClick={this.increaseQuantity}
+                            //onClick={this.increaseQuantity}
+                            onClick= { () => onIncreaseQuantity(product)}
                         />
                         <img 
                             alt="decrease" 
                             className="actions-icons" 
                             src="https://cdn-icons-png.flaticon.com/128/992/992683.png" 
-                            onClick={this.decreaseQuantity}
+                            onClick={() => onDecreaseQuantity(product)}
                         />
                         <img 
                             alt="delete" 
                             className="actions-icons" 
                             src="https://cdn-icons.flaticon.com/png/128/484/premium/484662.png?token=exp=1644749332~hmac=356301bf1a0e6f4433f9311985d96d0b" 
+                            onClick = {() => onDeleteProduct(product.id)}
                         />
 
                     </div>
