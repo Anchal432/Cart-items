@@ -206,7 +206,7 @@ handleIncreaseQuantity = (product) => {
           count = {this.getCartCount()}
         />
         {/* <button onClick={this.addProduct} style={{padding:20, fontSize:20}} >Add a product</button> */}
-        <h1 >Cart</h1>
+        <h1 style={{margin:20}}>Cart</h1>
         <Cart 
           products = {products}
           onIncreaseQuantity = {this.handleIncreaseQuantity}

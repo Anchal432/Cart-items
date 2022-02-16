@@ -1,4 +1,7 @@
 import React from 'react';
+import minus from './Images/minus.png';
+import remove from './Images/delete.png';
+import plus from './Images/plus.png';
 
 const CartItem = (props) => {
     /*constructor () {
@@ -76,20 +79,20 @@ const CartItem = (props) => {
                     <img 
                         alt="increase" 
                         className="actions-icons" 
-                        src="https://cdn-icons.flaticon.com/png/128/3303/premium/3303893.png?token=exp=1644749279~hmac=df3724a1fa36004f9d242aab2396c6b0" 
+                        src={plus} 
                         //onClick={this.increaseQuantity}
                         onClick= { () => onIncreaseQuantity(product)}
                     />
                     <img 
                         alt="decrease" 
                         className="actions-icons" 
-                        src="https://cdn-icons-png.flaticon.com/128/992/992683.png" 
+                        src={minus} 
                         onClick={() => onDecreaseQuantity(product)}
                     />
                     <img 
                         alt="delete" 
                         className="actions-icons" 
-                        src="https://cdn-icons.flaticon.com/png/128/484/premium/484662.png?token=exp=1644749332~hmac=356301bf1a0e6f4433f9311985d96d0b" 
+                        src={remove} 
                         onClick = {() => onDeleteProduct(product.id)}
                     />
 
